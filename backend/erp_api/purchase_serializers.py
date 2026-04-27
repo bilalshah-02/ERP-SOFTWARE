@@ -394,7 +394,6 @@ class GoodsReceiptCreateSerializer(serializers.Serializer):
                     tx_date=validated_data['receipt_date'],
                     source_doc_type='GOODS_RECEIPT',
                     source_doc_id=str(po.po_id),
-                    notes=f"GRN {grn_number}: {validated_data.get('notes', '')}"
                 )
             
             # ========== PHASE 2: POST TO GL ==========
@@ -409,7 +408,7 @@ class GoodsReceiptCreateSerializer(serializers.Serializer):
                 # Create GL Journal for Goods Receipt
                 gl_journal = GlJournal.objects.create(
                     company_key_id=po.company_key_id,
-                    journal_number=f"GR-{grn_number}",
+                    journal_number=f"GR-{grn_number}-{uuid.uuid4().hex[:6]}",
                     journal_date=validated_data['receipt_date'],
                     period_key=period,
                     description=f"Goods Receipt {grn_number} - PO {po.po_number}",

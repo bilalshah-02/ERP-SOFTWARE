@@ -1,0 +1,169 @@
+@import "tailwindcss"; /* keep it, doesn’t hurt */
+
+
+body {
+  background-color: #b3e5ff; /* sky blue */
+  margin: 0;
+  overflow: hidden;
+}
+#sidebar a.active {
+  background-color: #003580;
+}
+
+#sidebar {
+  width: 260px;
+  background-color: #001f4d; /* Navy blue */
+  height: 100vh;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 25px 15px;
+}
+
+#sidebar h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+#sidebar a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 10px 5px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+#sidebar a:hover {
+  background-color: #003580;
+}
+
+#header {
+  margin-left: 260px;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 30px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#main {
+  margin-left: 260px;
+  padding: 22px 28px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+
+  /* better */
+  box-sizing: border-box;
+}
+.main-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+
+.card-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Global polish ---------- */
+:root {
+  --sky: #b3e5ff;
+  --navy: #001f4d;
+  --blue: #004aad;
+  --blue2: #003580;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+#main {
+  padding: 28px;
+}
+
+.card-box {
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.card-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
+}
+
+/* Make Dashboard cards feel clickable */
+.card-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card-link:focus-visible {
+  outline: 3px solid rgba(0, 74, 173, 0.35);
+  border-radius: 16px;
+}
+
+/* Better sidebar spacing */
+#sidebar a {
+  padding: 12px 10px;
+  margin-bottom: 6px;
+  opacity: 0.95;
+}
+#sidebar a:hover { opacity: 1; }
+
+/* Active nav */
+#sidebar a.active {
+  background-color: var(--blue2);
+}
+
+/* Header buttons look cleaner */
+#header .btn {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.card-box:hover {
+  transform: translateY(-3px);
+}
+
+.card-link .badge {
+  opacity: 0.9;
+}
+.card-link:hover .badge {
+  opacity: 1;
+}
+
+/* Sidebar active indicator bar */
+#sidebar a.active {
+  position: relative;
+  background-color: var(--blue2);
+}
+#sidebar a.active::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+#header {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
