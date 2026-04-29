@@ -50,7 +50,7 @@ export default function VendorInvoiceDetail() {
       payment_method: paymentMethod,
       reference_no: referenceNo,
       ap_account_key: apAccountKey,
-      bank_account_key: cashAccountKey,
+      cash_account_key: cashAccountKey,
       invoice_id: id,
     });
   };
