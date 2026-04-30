@@ -217,7 +217,7 @@ export const createVendorPayment = async (data: {
   reference_no?: string;
   remarks?: string;
   ap_account_key: number;
-  cash_account_key: number;
+  bank_account_key: number;
   invoice_id?: string;
 }): Promise<any> => {
   const res = await http.post("/api/purchase/payments/", data);

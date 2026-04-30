@@ -57,7 +57,7 @@ export default function VendorPaymentCreate() {
       reference_no: referenceNo,
       remarks,
       ap_account_key: Number(apAccountKey),
-      cash_account_key: Number(cashAccountKey), // ✅ FIXED: Correct field name
+      bank_account_key: Number(cashAccountKey), // ✅ FIXED: Correct field name
       invoice_id: invoiceId || undefined,
     });
   };

@@ -15,8 +15,8 @@ export default function CustomerReceiptCreate() {
   const [paymentMethod, setPaymentMethod] = useState("BANK_TRANSFER");
   const [referenceNo, setReferenceNo] = useState("");
   const [notes, setNotes] = useState("");
-  const [cashAccountKey, setCashAccountKey] = useState("110"); // Default Cash/Bank account
-  const [arAccountKey, setArAccountKey] = useState("120"); // Default AR account
+  const [cashAccountKey, setCashAccountKey] = useState("46"); // Default Cash/Bank account
+  const [arAccountKey, setArAccountKey] = useState("44"); // Default AR account
 
   const { data: customers = [] } = useQuery<Customer[]>({
     queryKey: ["customers"],
